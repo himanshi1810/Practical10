@@ -1,0 +1,35 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewResultDemo</title>
+</head>
+<body>
+    <div>
+        This is View Result demo
+    </div>
+    <br />
+    <button id="runScript">Run JavaScriptResult</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#runScript").click(function () {
+            $.ajax({
+                url: "/ActionResult/JavaScriptResultDemo",
+                type: "GET",
+                success: function (data) {
+                    eval(data); // Execute the JavaScript returned from the controller
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
