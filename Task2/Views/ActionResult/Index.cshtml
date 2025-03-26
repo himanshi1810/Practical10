@@ -1,0 +1,63 @@
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Action Result Demo</h2>
+
+<div class="container">
+    <h2 class="mb-4 text-center">ASP.NET MVC Action Results Demo</h2>
+
+    <div class="list-group">
+        <a href="@Url.Action("ContentResultDemo", "ActionResult")" target="_blank" class="list-group-item list-group-item-action">
+
+            Content Result (Displays Simple Text)
+        </a>
+        <a href="@Url.Action("FileResultDemo", "ActionResult")" target="_blank" class="list-group-item list-group-item-action">
+
+            File Result (Downloads SampleText.txt)
+        </a>
+        <a href="@Url.Action("EmptyResultDemo", "ActionResult")" target="_blank" class="list-group-item list-group-item-action">
+
+            Empty Result (No Output)
+        </a>
+        <a href="@Url.Action("JavaScriptResultDemo", "ActionResult")" target="_blank" class="list-group-item list-group-item-action">
+
+            JavaScript Result (Runs JS Alert)
+        </a>
+        <button id="runScript">Run JavaScriptResult</button>
+        <a href="@Url.Action("JsonResultDemo", "ActionResult")" target="_blank" class="list-group-item list-group-item-action">
+
+            JSON Result (Returns JSON Object)
+        </a>
+        <a href="@Url.Action("RedirectResultDemo", "ActionResult")" target="_blank" class="list-group-item list-group-item-action">
+
+            Redirect Result (Redirects to Bing)
+        </a>
+        <a href="@Url.Action("RedirectToRouteResultDemo", "ActionResult")" target="_blank" class="list-group-item list-group-item-action">
+
+            Redirect To Route Result (Redirects to Content Result)
+        </a>
+        <a href="@Url.Action("ViewResultDemo", "ActionResult")" target="_blank" class="list-group-item list-group-item-action">
+
+            View Result (Loads Another View)
+        </a>
+        <a href="@Url.Action("ActionResultDemo", "ActionResult")" target="_blank" class="list-group-item list-group-item-action">
+
+            Action Result (Parent of All Types)
+        </a>
+    </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+      $("#runScript").click(function () {
+          $.ajax({
+              url: "/ActionResult/JavaScriptResultDemo",
+              type: "GET"
+          });
+      });
+  });
+</script>
+
+
